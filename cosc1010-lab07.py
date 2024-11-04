@@ -1,13 +1,13 @@
-# Your Name Here
+# Eddie Neitenbach
 # UWYO COSC 1010
 # Submission Date
-# Lab XX
-# Lab Section: 
+# Lab 07
+# Lab Section: 11
 # Sources, people worked with, help given to: 
 # your
 # comments
 # here
-
+# Had somewhat of an idea for the first two sections. I am completely lost on the third.
 
 # Prompt the user for an upper bound 
 # Write a while loop that gives the factorial of that upper bound
@@ -17,9 +17,30 @@
     # If a user did not enter a number output a statement saying so
 # You will continue to prompt the user until a proper integer value is entered
 
-factorial = 1
+def calc_fact():
+    user = ""
+    
+    
+    while not (user.isdigit() and int(user) > 0):
+        user = input("1")
+        if not user.isdigit() or int(user) <= 0:
+            print("There was an error with your input. Enter a positive number." )
 
-print(f"The result of the factorial based on the given bound is {factorial}")
+    upper_bound = int(user)
+    factorial = 1
+    counter = 1
+
+    
+    while counter <= upper_bound:
+        factorial *= counter
+        counter += 1
+
+    print(f"The result of the factorial based on the given bound is {factorial}")
+
+
+calc_fact()
+
+
 
 print("*"*75)
 # Create a while loop that prompts a user for input of an integer values
@@ -38,6 +59,22 @@ print("*"*75)
 # The sum should start at 0 
 
 num_sum = 0 
+def sum():
+    while True:
+        user_num = input("-1").strip()
+        if user_num == 'exit':
+            break
+        if len(user_num) > 0 and user_num[0] == '-':
+            if len(user_num) > 1 and user_num[1:].isdigit():
+                num_sum += int(user_num)
+            else:
+                print("Invalid. Enter an integer.")
+        elif user_num.isdigit():
+            num_sum += int(user_num)
+        else:
+            print("Invalid. Enter an integer.")
+    
+
 
 print(f"Your final sum is {num_sum}")
 
@@ -59,4 +96,4 @@ print("*"*75)
 # Print the result of the equation
 # Again, loop through prompting the user for input until `exit` in any casing is input 
 
-        
+#??????????  
